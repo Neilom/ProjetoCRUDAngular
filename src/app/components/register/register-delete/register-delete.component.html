@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-title>Excluir Cadastro</mat-card-title>
+  <form action="">
+    <mat-form-field>
+      <input matInput placeholder="Nome" [(ngModel)]='register.name' name="name" disabled>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Sexo" [(ngModel)]='register.sexo' name="sexo" disabled>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Data de Nascimento" [(ngModel)]='register.data_nascimento' name="data" disabled>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Estado Civil" [(ngModel)]='register.estado_civil' name="estado" disabled>
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button (click)=deleteRegister() class="delete">
+    Deletar
+   </button>
+  
+   <button mat-raised-button (click)=cancel()>
+    Cancelar
+   </button>
+</mat-card>

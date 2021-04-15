@@ -1,5 +1,5 @@
 export interface Register {
-  id?: number,
+  id?: string,
   name: string,
   sexo: string,
   data_nascimento: string,

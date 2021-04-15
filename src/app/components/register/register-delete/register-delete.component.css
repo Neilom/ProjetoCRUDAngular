@@ -1,0 +1,14 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+button{
+  margin-right: 1rem;
+}
+
+.delete{
+  color: white;
+  background: rgb(141, 22, 22) ;
+}

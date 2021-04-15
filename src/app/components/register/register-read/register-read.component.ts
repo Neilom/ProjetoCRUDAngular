@@ -10,13 +10,13 @@ import { RegisterService } from '../register.service';
 export class RegisterReadComponent implements OnInit {
 
   registers!: Register[];
+  displayedColumns = ['action', 'id', 'name', 'sexo' ]
 
   constructor(private registerService: RegisterService ) { }
 
   ngOnInit(): void {
     this.registerService.read().subscribe(registers => {
       this.registers = registers
-      console.log(registers)
     })
   }
 

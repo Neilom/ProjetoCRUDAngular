@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-title>Alteração de Cadastro</mat-card-title>
+  <form action="">
+    <mat-form-field>
+      <input matInput placeholder="Nome" [(ngModel)]='register.name' name="name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Sexo" [(ngModel)]='register.sexo' name="sexo">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Data de Nascimento" [(ngModel)]='register.data_nascimento' name="data">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Estado Civil" [(ngModel)]='register.estado_civil' name="estado">
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button (click)=updateRegister() class="bg">
+    Atualizar
+   </button>
+  
+   <button mat-raised-button (click)=cancel()>
+    Cancelar
+   </button>
+</mat-card>

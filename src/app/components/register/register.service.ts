@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatSnackBar} from '@angular/material/snack-bar'
+import { MatSnackBar } from '@angular/material/snack-bar'
 import { Observable } from 'rxjs';
 
 import { Register } from './register.model';
@@ -22,11 +22,28 @@ export class RegisterService {
     })
   }
 
-  create(registe: Register):Observable<Register> {
+  //Metodo para criar um registro no banco de dados
+  create(registe: Register): Observable<Register> {
     return this.http.post<Register>(this.baseUrl, registe)
   }
-
+  //Metodo para ler um registro no banco de dados
   read(): Observable<Register[]> {
     return this.http.get<Register[]>(this.baseUrl)
+  }
+  // metodo para ler um registro a partir de um ID no banco de dados
+  readById(id: string): Observable<Register> {
+    const url = `${this.baseUrl}/${id}`
+    return this.http.get<Register>(url)
+  }
+  // metodo para alterar um registro no banco de dados
+  update(register: Register): Observable<Register> {
+    const url = `${this.baseUrl}/${register.id}`
+    return this.http.put<Register>(url, register)
+  }
+
+  //Metodo para deletar registro no banco de dados
+  delete(id: string): Observable<Register> {
+    const url = `${this.baseUrl}/${id}`
+    return this.http.delete<Register>(url)
   }
 }

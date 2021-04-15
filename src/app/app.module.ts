@@ -23,7 +23,12 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 
 import { HttpClientModule } from '@angular/common/http';
-import { RegisterReadComponent } from './components/register/register-read/register-read.component'
+import { RegisterReadComponent } from './components/register/register-read/register-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { RegisterUpdateComponent } from './components/register/register-update/register-update.component';
+import { RegisterDeleteComponent } from './components/register/register-delete/register-delete.component'
 
 
 @NgModule({
@@ -35,7 +40,10 @@ import { RegisterReadComponent } from './components/register/register-read/regis
     HomeComponent,
     RegisterCrudComponent,
     RegisterCreateComponent,
-    RegisterReadComponent
+    RegisterReadComponent,
+    RegisterUpdateComponent,
+    RegisterDeleteComponent,
+    
 
   ],
   imports: [
@@ -52,6 +60,9 @@ import { RegisterReadComponent } from './components/register/register-read/regis
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
 
   ],
   providers: [],
