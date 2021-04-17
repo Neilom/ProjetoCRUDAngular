@@ -2,9 +2,12 @@
    width: 100%;
  }
 
+ i{
+   padding: 0.25rem;
+ }
+
  i.delete{
    color: rgb(141, 22, 22) ;
-   margin-left: 1rem;
  }
  
  

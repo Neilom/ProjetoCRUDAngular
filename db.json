@@ -1,32 +1,11 @@
 {
   "register": [
     {
-      "id": 1,
-      "name": "Diego Schmitt",
+      "name": "Leonardo Alfonso Schmitt",
       "sexo": "Masculino",
-      "data_nascimento": "28 de janeiro de 1997",
-      "estado_civil": "Solteiro"
-    },
-    {
-      "id": 2,
-      "name": "Leandro Schmitt",
-      "sexo": "Masculino",
-      "data_nascimento": "06 de janeiro de 1997",
-      "estado_civil": "Solteiro"
-    },
-    {
-      "name": "Leonardo",
-      "sexo": "Masculino",
-      "data_nascimento": "14 de janeiro de 212",
+      "data_nascimento": "1997-01-14",
       "estado_civil": "Solteiro",
-      "id": 3
-    },
-    {
-      "name": "saushausha",
-      "sexo": "hsuahuhas",
-      "data_nascimento": "hsauhsauh",
-      "estado_civil": "suahsua",
-      "id": 4
+      "id": 1
     }
   ]
 }

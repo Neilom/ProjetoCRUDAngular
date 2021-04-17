@@ -8,19 +8,19 @@
       <input matInput placeholder="Sexo" [(ngModel)]='register.sexo' name="sexo">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Data de Nascimento" [(ngModel)]='register.data_nascimento' name="data">
+      <input matInput type='date' placeholder="Data de Nascimento" [(ngModel)]='register.data_nascimento' name="data">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Estado Civil" [(ngModel)]='register.estado_civil' name="estado">
+      <input matInput type="" placeholder="Estado Civil" [(ngModel)]='register.estado_civil' name="estado_civil">
     </mat-form-field>
   </form>
 
   <button mat-raised-button (click)=createRegister() class="bg">
     Novo Registro
-   </button>
-  
-   <button mat-raised-button (click)=cancel()>
+  </button>
+
+  <button mat-raised-button (click)=cancel()>
     Cancelar
-   </button>
+  </button>
 </mat-card>
 

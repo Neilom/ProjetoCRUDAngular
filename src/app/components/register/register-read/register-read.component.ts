@@ -10,7 +10,7 @@ import { RegisterService } from '../register.service';
 export class RegisterReadComponent implements OnInit {
 
   registers!: Register[];
-  displayedColumns = ['action', 'id', 'name', 'sexo' ]
+  displayedColumns = ['action', 'name', 'sexo', "data_nascimento", "estado_civil" ]
 
   constructor(private registerService: RegisterService ) { }
 

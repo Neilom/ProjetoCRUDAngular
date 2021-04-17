@@ -14,7 +14,7 @@ export class RegisterDeleteComponent implements OnInit {
   register: Register = {
     name: "",
     sexo: "",
-    data_nascimento: "",
+    data_nascimento: 0,
     estado_civil: ""
   }
 
