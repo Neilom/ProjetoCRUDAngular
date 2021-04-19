@@ -9,6 +9,9 @@
   text-decoration: none;
   margin-right: 2rem;
 }
+.head{
+  margin-left: 220px;
+}
 
 .header .logo{
   max-height: 32px;

@@ -2,8 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { Observable } from 'rxjs';
-
 import { Register } from './register.model';
+
+
+/*Nesse arquivo estão listados todos os serviços da aplicação
+ no caso o CRUD ncessário para a aplicação rodar */
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +15,12 @@ export class RegisterService {
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
+  //URL gerado pelo JSON-server
   baseUrl = "http://localhost:3001/register"
 
+
+  //Mensagem que aparecerá no canto superior 
+  //direito da tela, com o intuito de informar o sucesso da operação
   showMessage(msg: string): void {
     this.snackBar.open(msg, 'X', {
       duration: 3000,

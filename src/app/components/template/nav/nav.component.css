@@ -1,7 +1,7 @@
 .sidenav{
   background-color:rgb(50, 57, 151) ;
   width: 200px;
-
+  
 } 
 
 .sidenav a{
@@ -14,4 +14,10 @@
 .content {
   padding: 16px;
   background-color: #fff;
+  
+}
+
+.logo{
+  margin-left: 10px;
+  max-height: 52px;
 }

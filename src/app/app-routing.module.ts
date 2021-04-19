@@ -7,6 +7,12 @@ import { RegisterCreateComponent } from './components/register/register-create/r
 import { RegisterUpdateComponent } from './components/register/register-update/register-update.component';
 import { RegisterDeleteComponent } from './components/register/register-delete/register-delete.component';
 
+/* Neste arquivo estão as rotas da aplicação
+As diferentes telas da aplicação são chamados a partir daqui.
+
+O 'path' é a indicação de qual caminho no browser que a rota vai tomar  
+O 'component' é o componente que essa rota vai chamar*/
+
 const routes: Routes = [{
   path: "",
   component: HomeComponent

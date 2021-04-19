@@ -28,7 +28,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { RegisterUpdateComponent } from './components/register/register-update/register-update.component';
-import { RegisterDeleteComponent } from './components/register/register-delete/register-delete.component'
+import { RegisterDeleteComponent } from './components/register/register-delete/register-delete.component';
 
 
 @NgModule({
@@ -43,11 +43,11 @@ import { RegisterDeleteComponent } from './components/register/register-delete/r
     RegisterReadComponent,
     RegisterUpdateComponent,
     RegisterDeleteComponent,
-    
 
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -56,7 +56,6 @@ import { RegisterDeleteComponent } from './components/register/register-delete/r
     MatCardModule,
     MatButtonModule,
     MatSnackBarModule,
-    HttpClientModule,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,

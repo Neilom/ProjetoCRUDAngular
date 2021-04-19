@@ -19,6 +19,7 @@ export class RegisterCrudComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    
   }
 
   navigateToRegisterCreate(): void {

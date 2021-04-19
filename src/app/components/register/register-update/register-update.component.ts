@@ -20,8 +20,14 @@ export class RegisterUpdateComponent implements OnInit {
   register: Register = {
     name: "",
     sexo: "",
-    data_nascimento: 0,
-    estado_civil: ""
+    data_nascimento: "",
+    estado_civil: "",
+    CEP:'',
+    andress: '',
+    city: '',
+    complement: '',
+    number: 0,
+    state: '',
   }
 
   ngOnInit(): void {
