@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Register } from '../register.model';
-import { RegisterService } from '../register.service';
+import { Pessoa } from '../register.model';
+import { RegisterService } from '../../services/register.service';
 
 @Component({
   selector: 'app-register-delete',
@@ -10,36 +10,39 @@ import { RegisterService } from '../register.service';
 })
 export class RegisterDeleteComponent implements OnInit {
 
-
-  register: Register = {
-    name: "",
-    sexo: "",
-    data_nascimento: "",
-    estado_civil: "",
-    CEP:'',
-    andress: '',
-    city: '',
-    complement: '',
-    number: 0,
-    state: '',
+  props = {
+    texto: 'Deletar',
+    cor: 'red',
+    editavel: false
   }
 
 
-  constructor(private registerService: RegisterService,
+  constructor(
+    private registerService: RegisterService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!
-    this.registerService.readById(id).subscribe(register => {
-      this.register = register
-    })
+    return  id
+  }
+
+  recebePessoa(resposta: any) {
+    this.deleteRegister()
   }
 
   deleteRegister() {
-    this.registerService.delete(`${this.register.id}`).subscribe(() => {
-      this.registerService.showMessage('Cadastro deletado com sucesso')
-      this.router.navigate(['/register'])
+    this.registerService.delete(this.ngOnInit()).then(result => {
+      console.log(result)
+      if(result.status == 200){
+        this.registerService.showMessage('Cadastro deletado com sucesso!')
+        this.router.navigate(['/register'])
+      } else {
+        this.registerService.showMessage(`Erro: ${result.status} - ${result.data.message}`)
+
+      }
+
     })
   }
   cancel(): void {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Register } from '../register.model';
-import { RegisterService } from '../register.service';
+import { Router } from '@angular/router';
+import { Pessoa } from '../register.model';
+import { RegisterService } from '../../services/register.service';
 
 @Component({
   selector: 'app-register-update',
@@ -10,39 +10,39 @@ import { RegisterService } from '../register.service';
 })
 export class RegisterUpdateComponent implements OnInit {
 
+  props = {
+    texto: 'Atualizar',
+    cor: 'azul',
+    editavel: true
+
+  }
   constructor(
     private registerService: RegisterService,
     private router: Router,
-    private route: ActivatedRoute
   ) { }
 
 
-  register: Register = {
-    name: "",
-    sexo: "",
-    data_nascimento: "",
-    estado_civil: "",
-    CEP:'',
-    andress: '',
-    city: '',
-    complement: '',
-    number: 0,
-    state: '',
+  pessoa!: Pessoa
+
+  operacao!: string
+
+  ngOnInit() {
   }
 
-  ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id')!
-    this.registerService.readById(id).subscribe(register => {
-      this.register = register
-    })
+  recebePessoa(resposta: any) {
+    this.pessoa = resposta
+    this.updateRegister()
   }
+
+
 
   updateRegister(): void {
-    this.registerService.update(this.register).subscribe(() => {
+    this.registerService.update(this.pessoa).then(() => {
       this.registerService.showMessage('Registro atualizado com sucesso!')
       this.router.navigate(['/register'])
     })
   }
+
 
   cancel(): void {
     this.router.navigate(['/register'])

@@ -1,43 +1,52 @@
-<mat-card>
-  <mat-card-title>Novo Cadastro</mat-card-title>
-  <form action="">
-    <mat-form-field>
-      <input matInput placeholder="Nome" [(ngModel)]='register.name' name="name">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Sexo" [(ngModel)]='register.sexo' name="sexo">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type='date' placeholder="Data de Nascimento" [(ngModel)]='register.data_nascimento' name="data" id="nascimento">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Estado Civil" [(ngModel)]='register.estado_civil' name="estado_civil">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Endereço" [(ngModel)]='register.andress' name="andress">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="CEP" [(ngModel)]='register.CEP' name="CEP">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type='number' placeholder="Número" [(ngModel)]='register.number' name="number">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Complemento" [(ngModel)]='register.complement' name="complement">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Cidade" [(ngModel)]='register.city' name="city">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Estado" [(ngModel)]='register.state' name="state">
-    </mat-form-field>
-  </form>
+<mat-card-title>{{props.texto}} Cadastro</mat-card-title>
+<form [formGroup]="cadastroFrom" #formDir="ngForm" (ngSubmit)="createRegister()">
+  
+  <mat-form-field class="form-group">
+    <mat-label for="name">Digite seu nome</mat-label>
+    <input class="form-control" formControlName="name" matInput placeholder="Nome" [(ngModel)]='pessoa.name' name="name"
+      required>
+  </mat-form-field>
 
-  <button mat-raised-button (click)=createRegister() class="bg">
-    Novo Registro
-  </button>
+    <mat-form-field class="form-group">
+      <mat-label>Selecione o sexo</mat-label>
+      <mat-select [(value)]="pessoa.sex" required formControlName="sex" class="form-control">
+        <mat-option value="Masculino">Masculino</mat-option>
+        <mat-option value="Feminino">Feminino</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <button mat-raised-button (click)=cancel()>
-    Cancelar
-  </button>
-</mat-card>
+
+    <mat-form-field class="form-group">
+      <mat-label>Digite sua data de nascimento</mat-label>
+      <input matInput class="form-control" placeholder="Data de Nascimento" [(ngModel)]='pessoa.birth_date' name="birth_date" type='date'
+        required formControlName="birth_date">
+    </mat-form-field>
+
+    <mat-form-field class="form-group">
+      <mat-label>Selecione o estado civil</mat-label>
+      <mat-select [(value)]="pessoa.civil_state" required class="form-control" formControlName="civil_state">
+        <mat-option value="Solteiro(a)">Solteiro(a)</mat-option>
+        <mat-option value="Casado(a)">Casado(a)</mat-option>
+        <mat-option value="Divorciado(a)">Divorciado(a)</mat-option>
+        <mat-option value="Viúvo(a)">Viúvo(a)</mat-option>
+        <mat-option value="Separado(a)">Separado(a)</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+    <div>
+      <button
+       type="submit"
+       [disabled]="cadastroFrom.invalid"
+       mat-raised-button 
+       class="{{props.cor}}" 
+      >
+        {{props.texto}}
+      </button>
+
+      <button mat-raised-button (click)=cancel()>
+        Cancelar
+      </button>
+    </div>
+</form>

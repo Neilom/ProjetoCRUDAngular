@@ -1,0 +1,50 @@
+<div mat-dialog-content>
+  <form [formGroup]="enderecoForm" #formDir="ngForm">
+
+    <mat-form-field class="form-group">
+      <mat-label>CEP</mat-label>
+      <input matInput [(ngModel)]="data.cep" type="text"
+       required formControlName="cep" class="form-control" mask="00000-000" placeholder="00000-000">
+    </mat-form-field>
+
+    <mat-form-field class="form-group" >
+    <mat-label>Endereço</mat-label>
+      <input matInput [(ngModel)]="data.street" 
+       required formControlName="street" class="form-control" placeholder="Avenida Aristiliano Ramos">
+    </mat-form-field>
+
+    <mat-form-field class="form-group" >
+      <mat-label>Número</mat-label>
+      <input matInput [(ngModel)]="data.num" 
+       required formControlName="num" class="form-control" placeholder="333" type="number">
+    </mat-form-field>
+
+    <mat-form-field class="form-group">
+      <mat-label>Complemento</mat-label>
+      <input matInput [(ngModel)]="data.complement" 
+       required formControlName="complement" class="form-control" placeholder="Bloco C, Sala 302">
+    </mat-form-field>
+
+    <mat-form-field class="form-group">
+      <mat-label>Estado</mat-label>
+      <input matInput [(ngModel)]="data.state" 
+       required formControlName="state" class="form-control" placeholder="Santa Catarina">
+    </mat-form-field>
+
+    <mat-form-field class="form-group">
+      <mat-label>Cidade</mat-label>
+      <input matInput [(ngModel)]="data.city" 
+       required formControlName="city" class="form-control" placeholder="Rio do Sul">
+    </mat-form-field>
+
+    <mat-dialog-actions>
+      <button mat-raised-button class="azul" [mat-dialog-close]="data" type="submit" [disabled]="enderecoForm.invalid">
+        Adicionar
+      </button>
+      <button mat-raised-button mat-dialog-close>
+        Cancelar
+      </button>
+    </mat-dialog-actions>
+
+  </form>
+</div>

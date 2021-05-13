@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Register } from '../register.model';
-import { RegisterService } from '../register.service';
+import { Pessoa } from '../register.model';
+import { RegisterService } from '../../services/register.service';
 
 @Component({
   selector: 'app-register-read',
@@ -9,21 +9,22 @@ import { RegisterService } from '../register.service';
 })
 export class RegisterReadComponent implements OnInit {
 
-  registers!: Register[];
-  displayedColumns = [
-    'action',
-    'name',
-    "city",
-    "state"
-  ]
+  pessoas!: Pessoa[];
 
-
-  constructor(private registerService: RegisterService) { }
+  constructor(
+    private registerService: RegisterService
+  ) { }
 
   ngOnInit(): void {
-    this.registerService.read().subscribe(registers => {
-      this.registers = registers
+    this.registerService.read().then(registers => {
+      this.pessoas = registers.data
     })
   }
-
+  displayedColumns = [
+    "action",
+    "name",
+    "sex",
+    "birth_date",
+    "civil_state"
+  ]
 }

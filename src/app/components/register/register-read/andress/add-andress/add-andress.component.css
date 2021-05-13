@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+div{
+  width: 100%;
+}
+
+.bg {
+  margin-right: 2rem;
+}

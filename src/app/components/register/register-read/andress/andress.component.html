@@ -1,0 +1,13 @@
+<mat-card class="cima">
+  <mat-card-title class="titulo">Você está no cadastro de: {{pessoa.name}}</mat-card-title>
+
+  <button mat-raised-button class="azul" (click)="openDialog()">
+    Adicionar Endereço
+  </button>
+
+  <button mat-raised-button (click)=cancel()>
+    Voltar
+  </button>
+</mat-card>
+
+<app-andress-table></app-andress-table>

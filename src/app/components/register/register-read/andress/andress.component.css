@@ -1,7 +1,15 @@
+.cima{
+  margin-bottom: 2rem;
+}
 form {
   display: flex;
   flex-direction: column;
 }
+
 button{
   margin-right: 1rem;
+}
+
+.titulo{
+  margin-bottom: 2rem;
 }
