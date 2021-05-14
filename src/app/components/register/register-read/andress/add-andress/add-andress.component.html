@@ -3,9 +3,11 @@
 
     <mat-form-field class="form-group">
       <mat-label>CEP</mat-label>
-      <input matInput [(ngModel)]="data.cep" type="text"
+      <input matInput id="cep" [(ngModel)]="data.cep" type="text" (blur)="onChange()"
        required formControlName="cep" class="form-control" mask="00000-000" placeholder="00000-000">
     </mat-form-field>
+  
+
 
     <mat-form-field class="form-group" >
     <mat-label>Endereço</mat-label>

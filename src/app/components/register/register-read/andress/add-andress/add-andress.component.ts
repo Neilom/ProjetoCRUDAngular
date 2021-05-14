@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import axios from 'axios';
 import { Andress } from '../../../modal/andress.model';
 
 @Component({
@@ -9,6 +10,10 @@ import { Andress } from '../../../modal/andress.model';
   styleUrls: ['./add-andress.component.css']
 })
 export class AddAndressComponent implements OnInit {
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: Andress,
+  ) { }
 
   andress: Andress = {
     cep: '',
@@ -25,9 +30,21 @@ export class AddAndressComponent implements OnInit {
 
 
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Andress,
-  ) { }
+  onChange() {
+    if (this.enderecoForm.get("cep")?.value != '') {
+      axios.get(`//viacep.com.br/ws/${this.enderecoForm.get("cep")?.value}/json/`).then(result => {
+        this.enderecoForm.setValue({
+          cep: result.data.cep,
+          street: result.data.logradouro,
+          num: '',
+          complement: '',
+          state: result.data.uf,
+          city: result.data.localidade
+        })
+      })
+    }
+  }
+
 
 
 
