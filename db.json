@@ -2,29 +2,29 @@
   "register": [
     {
       "name": "Leonardo Alfonso Schmitt",
-      "sexo": "",
-      "data_nascimento": 0,
-      "estado_civil": "Solteiro(a)",
+      "sexo": "Masculino",
+      "data_nascimento": "",
+      "estado_civil": "Solteiro",
       "CEP": "89114-880",
       "andress": "Rua Cecilia Joana Schneider Krauss",
       "city": "Gaspar",
-      "complement": "casa",
-      "number": 0,
-      "state": "SC",
-      "id": 2
+      "complement": "Casa",
+      "number": 110,
+      "state": "Santa Catarina",
+      "id": 4
     },
     {
-      "name": "Diego",
-      "sexo": "Masc",
-      "data_nascimento": "2019-05-02",
-      "estado_civil": "Solteiro(a)",
+      "name": "Leonardo Alfonso Schmitt",
+      "sexo": "",
+      "data_nascimento": "",
+      "estado_civil": "SC",
       "CEP": "89114-880",
       "andress": "Rua Cecilia Joana Schneider Krauss",
       "city": "Gaspar",
-      "complement": "casa",
-      "number": 140,
-      "state": "Santa Catarina",
-      "id": 3
+      "complement": "",
+      "number": 0,
+      "state": "",
+      "id": 5
     }
   ]
 }

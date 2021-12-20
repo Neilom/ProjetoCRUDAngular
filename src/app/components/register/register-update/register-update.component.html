@@ -1,6 +1,7 @@
 <mat-card>
   <mat-card-title>Alteração de Cadastro</mat-card-title>
   <form action="">
+
     <mat-form-field>
       <input matInput placeholder="Nome" [(ngModel)]='register.name' name="name">
     </mat-form-field>
@@ -31,6 +32,7 @@
     <mat-form-field>
       <input matInput placeholder="Estado" [(ngModel)]='register.state' name="state">
     </mat-form-field>
+    
   </form>
 
   <button mat-raised-button (click)=updateRegister() class="bg">
